@@ -1,0 +1,16 @@
+{% extends 'docProfile/base.html' %}
+{% load static %}
+{% block content %}
+<h1>
+  {{ doc_name }}
+</h1>
+<div class="jumbotron">
+    <h2>Patients: </h2>
+      {% for patient in patients%}
+        <div>
+          <a href="/profile/patient/{{ patient.p_id }}">{{patient.name}}</a>
+        </div>
+      {% endfor %}
+</div>
+
+{% endblock %}

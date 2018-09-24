@@ -1,0 +1,15 @@
+{% extends 'docProfile/base.html' %}
+{% load static %}
+{% block content %}
+<form action="{{a}}" method="post">
+  {% csrf_token %}
+  {% for i in test %}
+  <div class="form-group">
+      <label for="{{ i }}"> {{ i }} </label>
+      <input type="number" class="form-control" name="{{ i }}" id="{{ i }}" placeholder="Value" required step="0.001">
+  </div>
+  {% endfor%}
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+{% endblock %}
